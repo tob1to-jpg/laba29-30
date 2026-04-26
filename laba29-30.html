@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blade & Beard | Професійний Барбершоп</title>
+    <style>
+        /* Базові налаштування та змінні */
+        :root {
+            --primary-color: #d4af37; /* Золотий відтінок */
+            --bg-dark: #121212;
+            --bg-lighter: #1e1e1e;
+            --text-light: #f5f5f5;
+            --text-muted: #aaaaaa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Навігація */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95);
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Головний екран */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #0a0a0a;
+            background-image: radial-gradient(circle at center, #2a2a2a 0%, #0a0a0a 100%);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-dark);
+        }
+
+        /* Секції */
+        .section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 15px auto 0;
+        }
+
+        /* Про нас */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: justify;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        /* Послуги (Прайс-лист без таблиць) */
+        .services-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 10px;
+        }
+
+        .service-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .service-price {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .service-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 5px;
+        }
+
+        /* Інструменти та підхід */
+        .equipment-section {
+            background-color: var(--bg-lighter);
+            padding: 80px 20px;
+            margin-top: 50px;
+        }
+
+        .equipment-text {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .equipment-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        /* Підвал */
+        footer {
+            background-color: #0a0a0a;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid #333;
+        }
+
+        footer p {
+            color: var(--text-muted);
+        }
+
+        /* Адаптивність для телефонів */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .service-item {
+                flex-direction: column;
+                border-bottom: none;
+                margin-bottom: 20px;
+                background-color: var(--bg-lighter);
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#home" class="logo">Blade & Beard</a>
+        <ul class="nav-links">
+            <li><a href="#home">Головна</a></li>
+            <li><a href="#about">Про нас</a></li>
+            <li><a href="#services">Послуги</a></li>
+            <li><a href="#contact">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <h1>Класика чоловічого стилю</h1>
+        <p>Місце, де поважають традиції, цінують твій час та створюють бездоганний зовнішній вигляд.</p>
+        <a href="#services" class="btn">Переглянути прайс</a>
+    </header>
+
+    <section id="about" class="section">
+        <h2 class="section-title">Філософія закладу</h2>
+        <div class="about-content">
+            <p>Ми не просто стрижемо волосся, ми формуємо стиль. Наша команда — це фанати своєї справи, які постійно вдосконалюють свої навички та вивчають нові техніки. Ми розуміємо, що кожен клієнт має унікальну анатомію обличчя та структуру волосся, тому до кожного застосовується індивідуальний підхід.</p>
+            <p>Атмосфера нашого закладу створена для того, щоб ви могли розслабитися, відволіктися від буденності та довірити свій зовнішній вигляд майстрам. Чіткі лінії, плавні переходи та бездоганний сервіс — це стандарт нашої роботи.</p>
+        </div>
+    </section>
+
+    <div class="equipment-section">
+        <div class="equipment-text">
+            <h2 class="section-title">Професійний підхід</h2>
+            <p>Для досягнення ідеального результату недостатньо лише таланту — потрібне надійне обладнання. Ми працюємо виключно з професійними інструментами, які розраховані на високі навантаження та забезпечують хірургічну точність зрізу.</p>
+            <p>У нашому арсеналі — потужні машинки з роторними двигунами, високоточні тримери для окантовки, небезпечні бритви зі змінними лезами та ергономічні ножиці з преміальної сталі, які довго тримають заточку. Правильний інструмент гарантує не лише якість стрижки, а й максимальний комфорт та безпеку для шкіри клієнта.</p>
+        </div>
+    </div>
+
+    <section id="services" class="section">
+        <h2 class="section-title">Наші послуги</h2>
+        
+        <div class="services-container">
+            <div>
+                <div class="service-item">
+                    <span class="service-name">Чоловіча стрижка</span>
+                    <span class="service-price">500 ₴</span>
+                </div>
+                <p class="service-desc">Підбір форми, миття голови, стрижка ножицями та машинкою, укладка професійною косметикою.</p>
+            </div>
+
+            <div>
+                <div class="service-item">
+                    <span class="service-name">Стрижка машинкою (Фейд)</span>
+                    <span class="service-price">400 ₴</span>
+                </div>
+                <p class="service-desc">Створення плавного димчастого переходу (fade) різної висоти з використанням шейвера.</p>
+            </div>
+
+            <div>
+                <div class="service-item">
+                    <span class="service-name">Моделювання бороди</span>
+                    <span class="service-price">350 ₴</span>
+                </div>
+                <p class="service-desc">Надання форми бороді, чіткі контури, розпарювання рушником та застосування доглядових олій.</p>
+            </div>
+
+            <div>
+                <div class="service-item">
+                    <span class="service-name">Королівське гоління</span>
+                    <span class="service-price">450 ₴</span>
+                </div>
+                <p class="service-desc">Традиційне вологе гоління небезпечною бритвою з гарячими компресами та піною.</p>
+            </div>
+            
+            <div>
+                <div class="service-item">
+                    <span class="service-name">Комплекс (Стрижка + Борода)</span>
+                    <span class="service-price">800 ₴</span>
+                </div>
+                <p class="service-desc">Повний комплекс послуг для ідеального образу за один сеанс.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2 style="color: var(--primary-color); margin-bottom: 20px;">Чекаємо на вас</h2>
+        <p>м. Львів, вул. Центральна, 15</p>
+        <p>Щодня з 10:00 до 21:00</p>
+        <p style="margin-top: 20px; font-weight: bold; font-size: 1.2rem;">+38 (099) 123-45-67</p>
+        <p style="margin-top: 40px; font-size: 0.9rem;">&copy; 2026 Blade & Beard Barbershop. Всі права захищено.</p>
+    </footer>
+
+</body>
+</html>
