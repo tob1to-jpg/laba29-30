@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Барбершоп - Меню</title>
+    <style>
+        /* Базові налаштування сторінки */
+        body { 
+            margin: 0; 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+        }
+
+        /* 1. СТИЛІ ДЛЯ ГОРИЗОНТАЛЬНОГО МЕНЮ */
+        .horizontal-menu { 
+            background-color: #1a1a1a; 
+            display: flex; 
+            padding: 0; 
+            margin: 0; 
+            list-style: none; 
+        }
+        
+        .horizontal-menu li { 
+            flex: 1; 
+            text-align: center; 
+        }
+        
+        .horizontal-menu a { 
+            display: block; 
+            color: white; 
+            padding: 15px 20px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            transition: 0.3s;
+        }
+        
+        .horizontal-menu a:hover { 
+            background-color: #d4af37; 
+            color: black; 
+        }
+        
+        /* Структура для нижньої частини сторінки (щоб меню було зліва, а текст справа) */
+        .main-container { 
+            display: flex; 
+            min-height: 80vh; 
+        }
+        
+        /* 2. СТИЛІ ДЛЯ ВЕРТИКАЛЬНОГО МЕНЮ */
+        .vertical-menu { 
+            background-color: #2c2c2c; 
+            width: 250px; 
+            padding: 0; 
+            margin: 0; 
+            list-style: none; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        
+        .vertical-menu li { 
+            border-bottom: 1px solid #444; 
+        }
+        
+        .vertical-menu a { 
+            display: block; 
+            color: #ddd; 
+            padding: 15px 20px; 
+            text-decoration: none; 
+            transition: 0.3s;
+        }
+        
+        .vertical-menu a:hover { 
+            background-color: #d4af37; 
+            color: black; 
+            /* Додаємо цікавий ефект зсуву при наведенні */
+            border-left: 5px solid #fff; 
+            padding-left: 15px; 
+        }
+        
+        /* Стилі для основного тексту */
+        .content { 
+            padding: 30px; 
+            flex: 1; 
+            background-color: #fff; 
+        }
+        
+        h1, h2 { 
+            color: #333; 
+        }
+        
+        p { 
+            line-height: 1.6; 
+            color: #555; 
+        }
+    </style>
+</head>
+<body>
+
+    <ul class="horizontal-menu">
+        <li><a href="#">Головна</a></li>
+        <li><a href="#">Про нас</a></li>
+        <li><a href="#">Прайс-лист</a></li>
+        <li><a href="#">Контакти</a></li>
+    </ul>
+
+    <div class="main-container">
+        
+        <ul class="vertical-menu">
+            <li><a href="#">Стрижка ножицями</a></li>
+            <li><a href="#">Стрижка машинкою</a></li>
+            <li><a href="#">Моделювання бороди</a></li>
+            <li><a href="#">Гоління небезпечною бритвою</a></li>
+            <li><a href="#">Професійні інструменти</a></li>
+        </ul>
+
+        <div class="content">
+            <h1>Ласкаво просимо до нашого Барбершопу</h1>
+            <p>Ми пропонуємо класичні та сучасні чоловічі стрижки, а також професійне оформлення бороди. Наші майстри використовують лише найкращі техніки для досягнення ідеального результату.</p>
+            
+            <h2>Наші послуги</h2>
+            <p>У нашому закладі ви можете отримати повний спектр послуг. Від швидкої стрижки машинкою до складного моделювання бороди та гоління небезпечною бритвою. Ми ретельно підходимо до вибору обладнання, використовуючи професійні машинки, тримери та ножиці преміум-класу, щоб забезпечити максимальний комфорт, довговічність використання та точність зрізу.</p>
+            
+            <h2>Чому обирають нас?</h2>
+            <p>Ми цінуємо ваш час та індивідуальний стиль. Кожен візит до нас — це можливість довірити свій зовнішній вигляд справжнім професіоналам своєї справи. Ви можете бути впевнені у якості виконання кожної деталі.</p>
+        </div>
+        
+    </div>
+
+</body>
+</html>
